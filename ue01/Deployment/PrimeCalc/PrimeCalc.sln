@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCalc.Client", "PrimeCalc.Client\PrimeCalc.Client.csproj", "{6B0B9C8D-FA63-4BC6-84F9-A2B5BCDB1B56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCalc.Math", "PrimeCalc.Math\PrimeCalc.Math.csproj", "{FC2679F7-6EF5-485D-B993-637F1556EB6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B0B9C8D-FA63-4BC6-84F9-A2B5BCDB1B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B0B9C8D-FA63-4BC6-84F9-A2B5BCDB1B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B0B9C8D-FA63-4BC6-84F9-A2B5BCDB1B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B0B9C8D-FA63-4BC6-84F9-A2B5BCDB1B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2679F7-6EF5-485D-B993-637F1556EB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2679F7-6EF5-485D-B993-637F1556EB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2679F7-6EF5-485D-B993-637F1556EB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2679F7-6EF5-485D-B993-637F1556EB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
