@@ -1,3 +1,4 @@
+using FluentAssertions;
 using HashDictionary.Impl;
 
 namespace HashDictionary.Tests {
@@ -20,6 +21,18 @@ namespace HashDictionary.Tests {
         }
 
         [Fact]
+        public void IndexerGetterAndSetterAreConsistent()
+        {
+            IDictionary<int, int> dict = new HashDictinary<int, int>();
+            dict[1] = 10;
+            dict[1].Should().Be(10);
+
+            dict[2] = 20;
+            dict[1].Should().Be(10);
+            dict[2].Should().Be(20);
+        }
+
+        [Fact]
         public void ArgumentException_WhenItemAddedTwice()
         {
             IDictionary<int, int> dict = new HashDictinary<int, int>();
@@ -27,6 +40,17 @@ namespace HashDictionary.Tests {
             dict.Add(2, 20);
 
             Assert.Throws<ArgumentException>(() => dict.Add(1, 100));
+        }
+
+        [Fact]
+        public void ArgumentException_WhenItemAddedTwice_Fluent()
+        {
+            IDictionary<int, int> dict = new HashDictinary<int, int>();
+            dict.Add(1, 10);
+            dict.Add(2, 20);
+
+            Action act = () => dict.Add(1, 100);
+            act.Should().Throw<ArgumentException>();
         }
 
         [Theory]
