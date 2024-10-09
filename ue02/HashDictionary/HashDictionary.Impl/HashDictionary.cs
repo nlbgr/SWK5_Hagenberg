@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace HashDictionary.Impl;
 
@@ -26,7 +27,7 @@ public class HashDictinary<K, V> : IDictionary<K, V>
 
     private int IndexFor(K key) => Math.Abs(key.GetHashCode()) % ht.Length;
 
-    private Node findNode(K key)
+    private Node FindNode(K key)
     {
         Node n = ht[IndexFor(key)];
 
@@ -41,7 +42,7 @@ public class HashDictinary<K, V> : IDictionary<K, V>
 
     private bool Add(K key, V value, out Node node)
     {
-        node = findNode(key);
+        node = FindNode(key);
         if (node is not null)
         {
             return false; // key already exists
@@ -58,13 +59,17 @@ public class HashDictinary<K, V> : IDictionary<K, V>
 
     public IEnumerator<KeyValuePair<K, V>> GetEnumerator()
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < ht.Length; ++i)
+        {
+            for (Node n = ht[i]; n is not null; n = n.Next)
+            {
+                yield return new KeyValuePair<K, V>(n.Key, n.Value);
+            }
+        }
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
+    // Kann nur verwendet werden, wenn die Variable den statischen Types des Interfaces aufweist. Dadurch wird Überladen von Interfaces möglich
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     public void Add(KeyValuePair<K, V> item) => this.Add(item.Key, item.Value);
 
@@ -78,14 +83,21 @@ public class HashDictinary<K, V> : IDictionary<K, V>
 
     public void CopyTo(KeyValuePair<K, V>[] array, int arrayIndex)
     {
-        throw new NotImplementedException();
+        foreach (var pair in this)
+        {
+            array[arrayIndex++] = pair;
+        }
     }
 
     public bool Remove(KeyValuePair<K, V> item)
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException(); // Selbsterklärend daher ned implementiert. Einfach Listen stuff, 1. Semester
     }
-    
+
+    public bool Remove(K key) {
+        throw new NotImplementedException(); // Selbsterklärend daher ned implementiert. Einfach Listen stuff, 1. Semester
+    }
+
     public void Add(K key, V value)
     {
         if (!Add(key, value, out _))
@@ -94,16 +106,11 @@ public class HashDictinary<K, V> : IDictionary<K, V>
         }
     }
 
-    public bool ContainsKey(K key) => findNode(key) is not null;
-
-    public bool Remove(K key)
-    {
-        throw new NotImplementedException();
-    }
-
+    public bool ContainsKey(K key) => FindNode(key) is not null;
+    
     public bool TryGetValue(K key, [MaybeNullWhen(false)] out V value)
     {
-        Node n = findNode(key);
+        Node n = FindNode(key);
         value = n is not null ? n.Value : default;
         return n is not null;
     }
@@ -112,7 +119,7 @@ public class HashDictinary<K, V> : IDictionary<K, V>
     {
         get
         {
-            Node n = findNode(key);
+            Node n = FindNode(key);
             if (n is null) throw new KeyNotFoundException();
             return n.Value;
         }
@@ -138,5 +145,14 @@ public class HashDictinary<K, V> : IDictionary<K, V>
         }
     }
 
-    public ICollection<V> Values { get; }
+    public ICollection<V> Values 
+    {
+        get {
+            List<V> values = new List<V>(this.Count);
+            foreach (KeyValuePair<K, V> pair in this) {
+                values.Add(pair.Value);
+            }
+            return values;
+        }
+    }
 }

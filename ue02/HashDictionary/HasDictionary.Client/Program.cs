@@ -34,4 +34,13 @@ static IDictionary<string, int> TestIndexerAndAdd()
     return cityInfo;
 }
 
-TestIndexerAndAdd();
+static void PrintDictionary<K, V>(IDictionary<K, V> dict)
+{
+    foreach (KeyValuePair<K, V> pair in dict)
+    {
+        Console.WriteLine($"{pair.Key} -> {pair.Value}");
+    }
+}
+
+var cityInfo = TestIndexerAndAdd();
+PrintDictionary(cityInfo);
