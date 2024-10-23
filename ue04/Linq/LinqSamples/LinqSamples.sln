@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqSamples", "LinqSamples\LinqSamples.csproj", "{15CC61B0-A279-4647-A517-E832CFAFE724}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqSamples.Data", "..\LinqSamples.Data\LinqSamples.Data.csproj", "{E4FCAD78-06DD-4147-A0EA-992D8EDDD9FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15CC61B0-A279-4647-A517-E832CFAFE724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CC61B0-A279-4647-A517-E832CFAFE724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CC61B0-A279-4647-A517-E832CFAFE724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CC61B0-A279-4647-A517-E832CFAFE724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4FCAD78-06DD-4147-A0EA-992D8EDDD9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4FCAD78-06DD-4147-A0EA-992D8EDDD9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4FCAD78-06DD-4147-A0EA-992D8EDDD9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4FCAD78-06DD-4147-A0EA-992D8EDDD9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01ED1F6A-F68F-4BB6-A419-F50348484B1E}
+	EndGlobalSection
+EndGlobal

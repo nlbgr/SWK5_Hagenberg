@@ -1,0 +1,22 @@
+// Migration ----------------------------------------------
+
+static IEnumerable<Person> GetPersons()
+{
+  return null; // may return null
+}
+
+static void PrintPersons(IEnumerable<Person> persons)
+{
+  foreach (var p in persons)
+  {
+    Console.WriteLine(p);
+  }
+}
+
+static void Migration()
+{
+  IEnumerable<Person> persons = GetPersons();
+  PrintPersons(persons);
+}
+
+// ========================================================
