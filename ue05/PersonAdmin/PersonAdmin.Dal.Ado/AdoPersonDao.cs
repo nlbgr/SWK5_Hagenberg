@@ -18,14 +18,20 @@ namespace PersonAdmin.Dal.Ado {
                     "ProviderName"
                 );
 
-            await using SqlConnection connection = new SqlConnection(connectionString);
+            DbUtil.RegisterAdoProviders();
+            DbProviderFactory dbFactory = DbProviderFactories.GetFactory(providerName);
+
+            await using DbConnection? connection = dbFactory.CreateConnection() ?? throw new InvalidOperationException("DbProviderFactory.CreateConnection() returned null");
+            connection.ConnectionString = connectionString;
             await connection.OpenAsync();
 
-            await using SqlCommand command = new SqlCommand("select * from person", connection);
-            await using SqlDataReader reader = await command.ExecuteReaderAsync();
+            await using DbCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM PERSON";
+
+            await using DbDataReader reader = await command.ExecuteReaderAsync();
 
             var items = new List<Person>();
-            while (reader.Read()){
+            while (await reader.ReadAsync()){
                 items.Add(new Person(
                     id: (int)reader["Id"],
                     firstName: (string)reader["first_name"],
