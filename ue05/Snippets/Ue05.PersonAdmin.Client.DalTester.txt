@@ -1,0 +1,50 @@
+    internal class DalTester
+    {
+        private readonly IPersonDao personDao;
+
+        public DalTester(IPersonDao personDao)
+        {
+            this.personDao = personDao;
+        }
+
+        public async Task TestFindAllAsync()
+        {
+            (await personDao.FindAllAsync())
+                     .ToList()
+                     .ForEach(p => Console.WriteLine($"{p.Id,5} |{ p.FirstName,-10} |{ p.LastName,-15} |{ p.DateOfBirth,10:yyyy - MM - dd}"));
+        }
+
+        public async Task TestFindByIdAsync()
+        {
+            Person person1 = await personDao.FindByIdAsync(1);
+            Console.WriteLine($"FindById(1) -> {person1?.ToString() ?? "<null>"}");
+
+            Person person2 = await personDao.FindByIdAsync(99);
+            Console.WriteLine($"FindById(99) -> {person2?.ToString() ?? "<null>"}");
+        }
+
+        public async Task TestUpdateAsync()
+        {
+            Person person = await personDao.FindByIdAsync(1);
+            Console.WriteLine($"before update: person -> {person?.ToString() ?? "<null>"}");
+            if (person == null) return;
+
+            person.DateOfBirth = DateTime.Now.AddYears(-100);
+            await personDao.UpdateAsync(person);
+
+            person = await personDao.FindByIdAsync(1);
+            Console.WriteLine($"after update:  person -> {person?.ToString() ?? "<null>"}");
+        }
+
+        public async Task TestInsertAsync()
+        {
+            Person newPerson = new Person
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                DateOfBirth = DateTime.Now
+            };
+            await personDao.InsertAsync(newPerson);
+            Console.WriteLine($"person inserted -> {newPerson}");
+        }
+    }
