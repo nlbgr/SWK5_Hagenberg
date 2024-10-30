@@ -37,5 +37,22 @@ namespace PersonAdmin.Dal.Ado {
                 new QueryParameter("@id", p.Id)
             ) == 1;
         }
+
+        public async Task InsertAsync(Person p) {
+            const string SQL_INSERT =
+                @"INSERT INTO 
+                    PERSON 
+                        (first_name, last_name, date_of_birth) 
+                    OUTPUT INSERTED.ID
+                    VALUES 
+                        (@fn, @ln, @dob)";
+
+            p.Id = await template.ExecuteScalarAsync<int>(
+                SQL_INSERT,
+                new QueryParameter("@fn", p.FirstName),
+                new QueryParameter("@ln", p.LastName),
+                new QueryParameter("@dob", p.DateOfBirth)
+            );
+        }
     }
 }

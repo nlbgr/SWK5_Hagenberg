@@ -28,11 +28,23 @@ namespace PersonAdmin.Client {
             Console.WriteLine($"before update: person -> {person?.ToString() ?? "<null>"}");
             if (person == null) return;
 
-            person.DateOfBirth = DateTime.Now;
+            person.DateOfBirth = DateTime.Now.AddYears(-100);
             await personDao.UpdateAsync(person);
 
             person = await personDao.FindByIdAsync(1);
             Console.WriteLine($"after update:  person -> {person?.ToString() ?? "<null>"}");
         }
+
+        public async Task TestInsertAsync() {
+            Person newPerson = new Person (
+                id: -1,
+                firstName: "John",
+                lastName: "Doe",
+                dateOfBirth: DateTime.Now
+            );
+            await personDao.InsertAsync(newPerson);
+            Console.WriteLine($"person inserted -> {newPerson}");
+        }
+
     }
 }

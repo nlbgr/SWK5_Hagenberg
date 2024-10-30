@@ -16,10 +16,15 @@ public class SimplePersonDao : IPersonDao {
   }
 
   public Task<Person?> FindByIdAsync(int id) {
-      return Task.FromResult<Person>(personList[0]);
+      throw new NotImplementedException();
   }
 
   public Task<bool> UpdateAsync(Person p) {
-      return Task.FromResult<bool>(true);
+      throw new NotImplementedException();
+  }
+
+
+  public Task InsertAsync(Person p) {
+      throw new NotImplementedException();
   }
 }

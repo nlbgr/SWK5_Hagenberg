@@ -46,5 +46,15 @@ namespace Dal.Common {
 
             return await command.ExecuteNonQueryAsync();
         }
+
+        public async Task<R> ExecuteScalarAsync<R>(string commandText, params QueryParameter[] parameters) {
+            await using DbConnection connection = await connectionFactory.CreateConnectionAsync();
+            await using DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+            AddParameters(command, parameters);
+
+            object result = await command.ExecuteScalarAsync() ?? throw new InvalidOperationException("Empty result in ExecuteScalarAsync");
+            return (R)Convert.ChangeType(result, typeof(R));
+        }
     }
 }

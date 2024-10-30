@@ -32,3 +32,6 @@ await tester1.TestFindByIdAsync();
 
 PrintTitle("AdoPersonDao.UpdateAsync");
 await tester1.TestUpdateAsync();
+
+PrintTitle("AdoPersonDao.InsertAsync");
+await tester1.TestInsertAsync();
