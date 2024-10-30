@@ -35,3 +35,6 @@ await tester1.TestUpdateAsync();
 
 PrintTitle("AdoPersonDao.InsertAsync");
 await tester1.TestInsertAsync();
+
+PrintTitle("AdoPersonDao.TransactionsAsync");
+await tester1.TestTransactionsAsync();
