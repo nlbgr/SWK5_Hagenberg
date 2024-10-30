@@ -1,4 +1,5 @@
 ﻿using PersonAdmin.Client;
+using PersonAdmin.Dal.Ado;
 using PersonAdmin.Dal.Simple;
 
 static void PrintTitle(string text = "", int length = 60, char ch = '-') {
@@ -11,7 +12,12 @@ static void PrintTitle(string text = "", int length = 60, char ch = '-') {
 // Usually a container is responsible for that
 // Here we create the component tree in the main program
 
-var tester1 = new DalTester(new SimplePersonDao());
+//var tester1 = new DalTester(new SimplePersonDao());
+
+//PrintTitle("SimplePersonDao.FindAllAsync");
+//await tester1.TestFindAllAsync();
+
+var tester1 = new DalTester(new AdoPersonDao());
 
 PrintTitle("SimplePersonDao.FindAllAsync");
 await tester1.TestFindAllAsync();
