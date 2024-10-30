@@ -14,7 +14,11 @@ namespace PersonAdmin.Dal.Ado {
             );
         }
 
-        private readonly AdoTemplate template = new();
+        private readonly AdoTemplate template;
+
+        public AdoPersonDao(IConnectionFactory connectionFactory) {
+            this.template = new(connectionFactory);
+        }
 
         public async Task<IEnumerable<Person>> FindAllAsync() {
             return await template.Query<Person>("SELECT * FROM PERSON", MapRowToPerson);

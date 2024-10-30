@@ -1,4 +1,6 @@
-﻿using PersonAdmin.Client;
+﻿using Dal.Common;
+using Microsoft.Extensions.Configuration;
+using PersonAdmin.Client;
 using PersonAdmin.Dal.Ado;
 using PersonAdmin.Dal.Simple;
 
@@ -17,7 +19,10 @@ static void PrintTitle(string text = "", int length = 60, char ch = '-') {
 //PrintTitle("SimplePersonDao.FindAllAsync");
 //await tester1.TestFindAllAsync();
 
-var tester1 = new DalTester(new AdoPersonDao());
+IConfiguration configuration = ConfigurationUtil.GetConfiguration();
+IConnectionFactory connectionFactory = DefaultConnectionFactory.FromConfiguration(configuration, "PersonDbConnection", "ProviderName");
+
+var tester1 = new DalTester(new AdoPersonDao(connectionFactory));
 
 PrintTitle("SimplePersonDao.FindAllAsync");
 await tester1.TestFindAllAsync();
