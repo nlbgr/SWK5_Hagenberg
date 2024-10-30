@@ -29,3 +29,6 @@ await tester1.TestFindAllAsync();
 
 PrintTitle("AdoPersonDao.FindAllAsync");
 await tester1.TestFindByIdAsync();
+
+PrintTitle("AdoPersonDao.UpdateAsync");
+await tester1.TestUpdateAsync();

@@ -27,5 +27,15 @@ namespace PersonAdmin.Dal.Ado {
         public async Task<Person?> FindByIdAsync(int id) {
             return await template.QuerySingleAsnync<Person>("SELECT * FROM PERSON WHERE id=@id", MapRowToPerson, new QueryParameter("@id", id));
         }
+
+        public async Task<bool> UpdateAsync(Person p) {
+            return await template.ExecuteAsync(
+                "UPDATE PERSON SET first_name=@fn,  last_name=@ln, date_of_birth=@dob WHERE id=@id",
+                new QueryParameter("@fn", p.FirstName),
+                new QueryParameter("@ln", p.LastName),
+                new QueryParameter("@dob", p.DateOfBirth),
+                new QueryParameter("@id", p.Id)
+            ) == 1;
+        }
     }
 }

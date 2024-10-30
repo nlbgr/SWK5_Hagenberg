@@ -22,5 +22,17 @@ namespace PersonAdmin.Client {
             Person? p1 = await personDao.FindByIdAsync(1);
             Console.WriteLine($"FindById(1) --> {p1?.ToString() ?? "null"}");
         }
+
+        public async Task TestUpdateAsync() {
+            Person? person = await personDao.FindByIdAsync(1);
+            Console.WriteLine($"before update: person -> {person?.ToString() ?? "<null>"}");
+            if (person == null) return;
+
+            person.DateOfBirth = DateTime.Now;
+            await personDao.UpdateAsync(person);
+
+            person = await personDao.FindByIdAsync(1);
+            Console.WriteLine($"after update:  person -> {person?.ToString() ?? "<null>"}");
+        }
     }
 }

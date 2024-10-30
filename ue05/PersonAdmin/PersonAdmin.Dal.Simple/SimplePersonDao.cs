@@ -18,4 +18,8 @@ public class SimplePersonDao : IPersonDao {
   public Task<Person?> FindByIdAsync(int id) {
       return Task.FromResult<Person>(personList[0]);
   }
+
+  public Task<bool> UpdateAsync(Person p) {
+      return Task.FromResult<bool>(true);
+  }
 }

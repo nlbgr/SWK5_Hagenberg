@@ -37,5 +37,14 @@ namespace Dal.Common {
         public async Task<T?> QuerySingleAsnync<T>(string commandText, RowMapper<T> rowMapper, params QueryParameter[] parameters) {
             return (await QueryAsync<T>(commandText, rowMapper, parameters)).SingleOrDefault();
         }
+
+        public async Task<int> ExecuteAsync(string commandText, params QueryParameter[] parameters) {
+            await using DbConnection connection = await connectionFactory.CreateConnectionAsync();
+            await using DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+            AddParameters(command, parameters);
+
+            return await command.ExecuteNonQueryAsync();
+        }
     }
 }
