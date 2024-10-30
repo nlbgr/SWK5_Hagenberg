@@ -21,7 +21,11 @@ namespace PersonAdmin.Dal.Ado {
         }
 
         public async Task<IEnumerable<Person>> FindAllAsync() {
-            return await template.Query<Person>("SELECT * FROM PERSON", MapRowToPerson);
-        } 
+            return await template.QueryAsync<Person>("SELECT * FROM PERSON", MapRowToPerson);
+        }
+
+        public async Task<Person?> FindByIdAsync(int id) {
+            return await template.QuerySingleAsnync<Person>("SELECT * FROM PERSON WHERE id=@id", MapRowToPerson, new QueryParameter("@id", id));
+        }
     }
 }

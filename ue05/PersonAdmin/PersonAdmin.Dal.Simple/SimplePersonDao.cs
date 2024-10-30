@@ -14,4 +14,8 @@ public class SimplePersonDao : IPersonDao {
   public Task<IEnumerable<Person>> FindAllAsync() {
       return Task.FromResult<IEnumerable<Person>>(personList);
   }
+
+  public Task<Person?> FindByIdAsync(int id) {
+      return Task.FromResult<Person>(personList[0]);
+  }
 }

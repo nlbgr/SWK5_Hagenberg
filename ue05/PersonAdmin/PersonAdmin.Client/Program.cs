@@ -24,5 +24,8 @@ IConnectionFactory connectionFactory = DefaultConnectionFactory.FromConfiguratio
 
 var tester1 = new DalTester(new AdoPersonDao(connectionFactory));
 
-PrintTitle("SimplePersonDao.FindAllAsync");
+PrintTitle("AdoPersonDao.FindAllAsync");
 await tester1.TestFindAllAsync();
+
+PrintTitle("AdoPersonDao.FindAllAsync");
+await tester1.TestFindByIdAsync();
