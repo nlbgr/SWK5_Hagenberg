@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableRefTypesExperiment"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTasks", "AsyncTasks\AsyncTasks.csproj", "{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethodTasks", "ExtensionMethodTasks\ExtensionMethodTasks.csproj", "{E0A4AE66-C640-4281-800C-0A4061581363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A4AE66-C640-4281-800C-0A4061581363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A4AE66-C640-4281-800C-0A4061581363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A4AE66-C640-4281-800C-0A4061581363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A4AE66-C640-4281-800C-0A4061581363}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
