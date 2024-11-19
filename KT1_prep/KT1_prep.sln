@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldExperiment", "YieldExperiment\YieldExperiment.csproj", "{7C8A091C-26D5-46A7-A93D-ECC3CFF8A878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumerableExperiment", "EnumerableExperiment\EnumerableExperiment.csproj", "{8DB2F0FA-E789-4865-857C-003BCAB5F49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesExperiment", "DelegatesExperiment\DelegatesExperiment.csproj", "{D0BB10D4-63CD-4C10-888E-0EC716259B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExperiment", "AsyncExperiment\AsyncExperiment.csproj", "{C1C506C3-0E65-4042-B32F-22310B777998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTasks", "LINQ\LinqTasks.csproj", "{EA032AF2-9347-4A19-9BF2-84C2B09BAD3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableRefTypesExperiment", "NullableRefTypesExperiment\NullableRefTypesExperiment.csproj", "{D82C8EE1-5485-4722-978C-EC6E084664F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTasks", "AsyncTasks\AsyncTasks.csproj", "{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C8A091C-26D5-46A7-A93D-ECC3CFF8A878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8A091C-26D5-46A7-A93D-ECC3CFF8A878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8A091C-26D5-46A7-A93D-ECC3CFF8A878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8A091C-26D5-46A7-A93D-ECC3CFF8A878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB2F0FA-E789-4865-857C-003BCAB5F49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB2F0FA-E789-4865-857C-003BCAB5F49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB2F0FA-E789-4865-857C-003BCAB5F49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB2F0FA-E789-4865-857C-003BCAB5F49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0BB10D4-63CD-4C10-888E-0EC716259B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0BB10D4-63CD-4C10-888E-0EC716259B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0BB10D4-63CD-4C10-888E-0EC716259B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0BB10D4-63CD-4C10-888E-0EC716259B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C506C3-0E65-4042-B32F-22310B777998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C506C3-0E65-4042-B32F-22310B777998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C506C3-0E65-4042-B32F-22310B777998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C506C3-0E65-4042-B32F-22310B777998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA032AF2-9347-4A19-9BF2-84C2B09BAD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA032AF2-9347-4A19-9BF2-84C2B09BAD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA032AF2-9347-4A19-9BF2-84C2B09BAD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA032AF2-9347-4A19-9BF2-84C2B09BAD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82C8EE1-5485-4722-978C-EC6E084664F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82C8EE1-5485-4722-978C-EC6E084664F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82C8EE1-5485-4722-978C-EC6E084664F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82C8EE1-5485-4722-978C-EC6E084664F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562B6ED7-3A38-4AC6-87EC-339B7E327CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
