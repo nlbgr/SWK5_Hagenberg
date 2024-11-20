@@ -66,7 +66,7 @@ namespace PersonAdmin.Client {
                     person1.DateOfBirth = newDate1 = oldDate1.AddDays(1);
                     person2.DateOfBirth = newDate2 = oldDate2.AddDays(1);
                     await personDao.UpdateAsync(person1);
-                    throw new ArgumentException(); // comment this out to rollback transaction
+                    //throw new ArgumentException(); // comment this out to rollback transaction
                     await personDao.UpdateAsync(person2);
                     scope.Complete();
                 }
