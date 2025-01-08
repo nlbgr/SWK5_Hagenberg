@@ -1,0 +1,37 @@
+﻿@page "/"
+@attribute [StreamRendering]
+
+<PageTitle>Currency List</PageTitle>
+<h2 class="h2 mb-3">Currency List</h2>
+
+@if (currencies is null)
+{
+    <p>Loading ...</p>
+}
+else
+{
+    <div class="row">
+        <table id="currency-table" class="table table-hover">
+            <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th class="text-end">Target Value</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            @foreach (var currency in currencies)
+            {
+                <tr>
+                    <td>@currency.Symbol</td>
+                    <td>@currency.Name</td>
+                    <td>@currency.Country</td>
+                    <td class="text-end fixed-width">@currency.EuroRate.ToString("F4")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}

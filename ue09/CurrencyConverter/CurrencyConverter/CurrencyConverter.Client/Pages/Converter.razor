@@ -1,0 +1,49 @@
+﻿@page "/converter"
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+
+<PageTitle>Currency Converter</PageTitle>
+<h2 class="h2 mb-3">Currency Converter</h2>
+
+@if (currencyData is null)
+{
+    <p>Loading ...</p>
+}
+else
+{
+    <div class="row">
+        <div class="mb-3 col-sm-6">
+            <div class="mb-3">
+                <label for="source-currency">Source Currency:</label>
+                <InputSelect TValue="string" id="source-currency" class="form-control" ValueExpression="@(() => sourceSymbol)" ValueChanged="HandleSourceCurrencyChanged">
+                    @foreach (var (value, text) in currencyData)
+                    {
+                        <option value="@value">@text</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <div class="mb-3">
+                <label for="target-currency">Source Value:</label>
+                <InputNumber TValue="decimal" id="target-currency" class="form-control" @bind-Value="sourceValue" @oninput="HandleSourceInput" />
+            </div>
+        </div>
+
+        <div class="mb-3 col-sm-6">
+            <div class="mb-3">
+                <label for="source-value">Target Currency:</label>
+                <InputSelect TValue="string" id="source-value" class="form-control" ValueExpression="@(() => targetSymbol)" ValueChanged="HandleTargetCurrencyChanged">
+                    @foreach (var (value, text) in currencyData)
+                    {
+                        <option value="@value">@text</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <div class="mb-3">
+                <label for="target-value">Target Value:</label>
+                <InputNumber TValue="decimal" id="target-value" class="form-control" @bind-Value="targetValue" @oninput="HandleTargetInput" />
+            </div>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,23 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<div>
+    <span style="font-size: 15pt">Random Button 1 (SSR - non interactive)</span>
+    <RandomButton/>
+</div>
+
+<div>
+    <span style="font-size: 15pt">Random Button 2 (InteractiveServer)</span>
+    <RandomButton @rendermode="InteractiveServer" Max="1000"/>
+</div>
+
+<div>
+    <span style="font-size: 15pt">Random Button 3 (InteractiveWebassambly)</span>
+    <RandomButton @rendermode="InteractiveWebAssembly" Max="1000" />
+</div>
+
+<div>
+    <span style="font-size: 15pt">Random Button 4 (InteractiveAuto)</span>
+    <RandomButton @rendermode="InteractiveAuto" Max="1000" />
+</div>
